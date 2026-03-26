@@ -1,0 +1,22 @@
+{
+  "n_reviews": 403,
+  "verdicts": {
+    "SPLIT": 266,
+    "UNANIMOUS_NULL": 122,
+    "UNANIMOUS_SIGNIFICANT": 15
+  },
+  "gap_classes": {
+    "Moderate": 108,
+    "Narrow": 160,
+    "Extreme": 87,
+    "Wide": 48
+  },
+  "gap_mean": 0.651,
+  "gap_median": 0.157,
+  "correlation_gap_robustness": 0.096,
+  "prosecution_top_estimator": "FE",
+  "defence_top_estimator": "FE",
+  "prosecution_top_bias": "none",
+  "defence_top_bias": "PET-PEESE",
+  "elapsed_seconds": 14.0
+}
