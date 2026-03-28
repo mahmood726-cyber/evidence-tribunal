@@ -7,7 +7,7 @@
   "type": "methods",
   "primary_estimand": "Adversarial verdict (Unanimous/Split)",
   "summary": "Prosecution-defence adversarial framing of 403 Cochrane reviews finds 266 with split verdicts where conclusions depend on analyst specification choices.",
-  "body": "Can adversarial specification search quantify how much a meta-analytic conclusion depends on analyst choices rather than underlying evidence? The Evidence Tribunal applies prosecution-defence framing to 403 Cochrane reviews, where prosecution selects the specification maximizing significance and defence selects the specification minimizing it, across seven estimators, three confidence interval methods, and three bias corrections. For each review, the adversarial gap between strongest and weakest specifications is computed on effect-size and log-p-value scales, classified as narrow, moderate, wide, or extreme. Of 403 reviews, 266 received split verdicts where prosecution achieved significance but defence did not, while only 15 yielded unanimous significance across all specifications. The mean adversarial gap was 0.651 with median 0.157, and PET-PEESE was the most common defence-favored bias correction. This framework reveals that most published meta-analytic conclusions are vulnerable to reasonable alternative analytical specifications. However, the limitation of relying on pre-computed specification data means the multiverse does not include Bayesian priors or alternative effect-size metrics.",
+  "body": "Can adversarial specification search quantify how much a meta-analytic conclusion depends on analyst choices rather than underlying evidence? The Evidence Tribunal applies prosecution-defence framing to 403 Cochrane reviews, where prosecution maximizes significance and defence minimizes it, across seven estimators, three confidence interval methods, and three bias corrections. For each review, the adversarial gap between strongest and weakest specifications is computed on effect-size and log-p-value scales, classified as narrow, moderate, wide, or extreme. Of 403 reviews, 266 (66 percent, 95% CI 61 to 71) received split verdicts where prosecution achieved significance but defence did not, while only 15 yielded unanimous significance. The mean adversarial gap was 0.651 with median 0.157, and PET-PEESE was the most common defence-favored bias correction. This framework reveals that most published meta-analytic conclusions are potentially vulnerable to reasonable alternative analytical specifications. However, the limitation of relying on pre-computed specification data means the current multiverse does not include Bayesian priors or alternative effect-size metrics.",
   "sentences": [
     {
       "role": "Question",
@@ -15,7 +15,7 @@
     },
     {
       "role": "Dataset",
-      "text": "The Evidence Tribunal applies prosecution-defence framing to 403 Cochrane reviews, where prosecution selects the specification maximizing significance and defence selects the specification minimizing it, across seven estimators, three confidence interval methods, and three bias corrections."
+      "text": "The Evidence Tribunal applies prosecution-defence framing to 403 Cochrane reviews, where prosecution maximizes significance and defence minimizes it, across seven estimators, three confidence interval methods, and three bias corrections."
     },
     {
       "role": "Method",
@@ -23,7 +23,7 @@
     },
     {
       "role": "Primary result",
-      "text": "Of 403 reviews, 266 received split verdicts where prosecution achieved significance but defence did not, while only 15 yielded unanimous significance across all specifications."
+      "text": "Of 403 reviews, 266 (66 percent, 95% CI 61 to 71) received split verdicts where prosecution achieved significance but defence did not, while only 15 yielded unanimous significance."
     },
     {
       "role": "Robustness",
@@ -31,11 +31,11 @@
     },
     {
       "role": "Interpretation",
-      "text": "This framework reveals that most published meta-analytic conclusions are vulnerable to reasonable alternative analytical specifications."
+      "text": "This framework reveals that most published meta-analytic conclusions are potentially vulnerable to reasonable alternative analytical specifications."
     },
     {
       "role": "Boundary",
-      "text": "However, the limitation of relying on pre-computed specification data means the multiverse does not include Bayesian priors or alternative effect-size metrics."
+      "text": "However, the limitation of relying on pre-computed specification data means the current multiverse does not include Bayesian priors or alternative effect-size metrics."
     }
   ],
   "notes": {
@@ -48,7 +48,7 @@
     "validation": "DRAFT"
   },
   "affiliation": "Tahir Heart Institute",
-  "email": "mahmood.ahmad2@nhs.net",
+  "email": "author@example.com",
   "references": [
     "Roever C. Bayesian random-effects meta-analysis using the bayesmeta R package. J Stat Softw. 2020;93(6):1-51.",
     "Higgins JPT, Thompson SG, Spiegelhalter DJ. A re-evaluation of random-effects meta-analysis. J R Stat Soc Ser A. 2009;172(1):137-159.",
