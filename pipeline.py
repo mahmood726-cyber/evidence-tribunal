@@ -14,14 +14,22 @@ Uses Fragility Atlas specification data (7 estimators × 3 CI × 3 bias × LOO).
 import csv
 import json
 import math
+import os
 import time
 import numpy as np
 from pathlib import Path
 from collections import Counter
 
-SPECS_PATH = Path(r'C:\FragilityAtlas\data\output\fragility_atlas_specifications.csv')
-RESULTS_PATH = Path(r'C:\FragilityAtlas\data\output\fragility_atlas_results.csv')
-OUTPUT_DIR = Path(r'C:\Models\EvidenceTribunal\data\output')
+# Input is a local Fragility Atlas snapshot; output defaults to this repo's data dir.
+# Override any of these via environment variables for portability.
+_DEFAULT_ATLAS = Path(r'C:\FragilityAtlas\data\output')
+_ATLAS_DIR = Path(os.environ.get('FRAGILITY_ATLAS_DIR', str(_DEFAULT_ATLAS)))
+SPECS_PATH = Path(os.environ.get('TRIBUNAL_SPECS_PATH',
+                                 str(_ATLAS_DIR / 'fragility_atlas_specifications.csv')))
+RESULTS_PATH = Path(os.environ.get('TRIBUNAL_RESULTS_PATH',
+                                   str(_ATLAS_DIR / 'fragility_atlas_results.csv')))
+OUTPUT_DIR = Path(os.environ.get('TRIBUNAL_OUTPUT_DIR',
+                                 str(Path(__file__).resolve().parent / 'data' / 'output')))
 
 
 def load_specs():
@@ -226,6 +234,11 @@ def main():
 
     elapsed = time.time() - t0
     print(f"  Processed: {len(results)} reviews in {elapsed:.1f}s")
+
+    if not results:
+        print("  No reviews produced a tribunal result (no matching specs/metadata).")
+        print(f"  Checked specs at {SPECS_PATH} and results at {RESULTS_PATH}.")
+        return
 
     # VERDICTS
     verdicts = Counter(r['verdict'] for r in results)
